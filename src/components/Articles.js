@@ -1,6 +1,8 @@
 import React from 'react';
 import { getTeamsArticles } from '../api';
 import Sidebar from './Sidebar';
+import { Route } from 'react-router-dom';
+import Article from './Article';
 
 export default class Articles extends React.Component {
     state = {
@@ -19,6 +21,8 @@ export default class Articles extends React.Component {
 
     render() {
         const { loading, teamsArticles } = this.state;
+        const { params, url } = this.props.match;
+        const { teamId } = params;
 
         return (
             loading ? 
@@ -30,6 +34,20 @@ export default class Articles extends React.Component {
                             list={teamsArticles}
                             {...this.props}
                         />
+
+                        <Route path={`${url}/:articleId`} render={({ match }) => (
+                            <Article articleId={match.params.articleId} teamId={teamId}>
+                                {article => !article ? 
+                                    <h1>LOADING</h1>:
+                                    (<div className='panel'>
+                                        <article className='article' key={article.id}>
+                                            <h1 className='header'>{article.title}</h1>
+                                            <p>{article.body}</p>
+                                        </article>
+                                    </div>)
+                                }
+                            </Article>
+                        )} />
                     </div>
         );
     }
