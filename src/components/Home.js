@@ -29,7 +29,7 @@ export default class Home extends Component {
 
                 <div className='home-grid'>
                     {teamNames.map(id => (
-                        <Link key={id} to={`/id`}>
+                        <Link key={id} to={`/${id}`}>
                             <TeamLogo id={id} style={{width: 125}} />
                         </Link>
                     ))}
