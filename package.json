@@ -19,6 +19,20 @@
     "eject": "react-scripts eject"
   },
   "main": "index.js",
-  "author": "Pranay Kumar Rudra <rudrapranaykumar@gmail.com>",
-  "license": "MIT"
+  "author": "Pranay Kumar",
+  "license": "MIT",
+  "description": "This application is built on React, React-Router-v4",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranaykumar389/react-router-hash-history-basketball-league.git"
+  },
+  "keywords": [
+    "React",
+    "React-Router-v4"
+  ],
+  "bugs": {
+    "url": "https://github.com/pranaykumar389/react-router-hash-history-basketball-league/issues"
+  },
+  "homepage": "https://github.com/pranaykumar389/react-router-hash-history-basketball-league#readme"
 }
